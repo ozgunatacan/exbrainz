@@ -1,18 +1,17 @@
 defmodule Exbrainz do
-  @moduledoc """
-  Documentation for Exbrainz.
-  """
+  alias Exbrainz.Artist
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Exbrainz.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def get_artist(mbid) do
+    path = "/artist/#{mbid}?inc=aliases&fmt=json"
+    response = get!(path)
+    Poison.decode!(response.body, as: %Artist{})
   end
+
+  defp get!(path) do
+    headers = ["user-Agent": user_agent()]
+    HTTPoison.get!(base_url() <> path, headers)
+  end
+
+  defp base_url, do: Application.fetch_env!(:exbrainz, :musicbrainz_base_url)
+  defp user_agent, do: Application.fetch_env!(:exbrainz, :user_agent)
 end

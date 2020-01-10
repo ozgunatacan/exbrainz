@@ -1,6 +1,7 @@
 # Exbrainz
+An Elixir Client library for [MusicBrainz web service.](https://musicbrainz.org/doc/Development/JSON_Web_Service)
 
-**TODO: Add description**
+To understand MusicBrainz terminology better read [here](https://musicbrainz.org/doc/Terminology)
 
 ## Installation
 
@@ -15,7 +16,14 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/exbrainz](https://hexdocs.pm/exbrainz).
+## Config
 
+Music brains needs User-Agent header for [rate-limiting](https://musicbrainz.org/doc/XML_Web_Service/Rate_Limiting)
+
+```elixir
+
+config :exbrainz,
+  musicbrainz_base_url: "https://musicbrainz.org/ws/2",
+  user_agent: "Xbrainz/0.1.0 ( https://github.com/ozgunatacan/exbrainz )"
+
+```
