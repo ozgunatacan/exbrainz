@@ -8,7 +8,7 @@ defmodule Exbrainz do
   end
 
   defp get!(path) do
-    headers = ["user-Agent": user_agent()]
+    headers = ["User-Agent": user_agent()]
     HTTPoison.get!(base_url() <> path, headers)
   end
 

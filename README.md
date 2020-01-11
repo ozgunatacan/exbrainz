@@ -1,7 +1,7 @@
 # Exbrainz
 An Elixir Client library for [MusicBrainz web service.](https://musicbrainz.org/doc/Development/JSON_Web_Service)
 
-To understand MusicBrainz terminology better read [here](https://musicbrainz.org/doc/Terminology)
+To understand MusicBrainz terminology better read [here.](https://musicbrainz.org/doc/Terminology)
 
 ## Installation
 
@@ -18,7 +18,7 @@ end
 
 ## Config
 
-Music brains needs User-Agent header for [rate-limiting](https://musicbrainz.org/doc/XML_Web_Service/Rate_Limiting)
+Music brains needs User-Agent header for [rate-limiting.](https://musicbrainz.org/doc/XML_Web_Service/Rate_Limiting)
 
 ```elixir
 
