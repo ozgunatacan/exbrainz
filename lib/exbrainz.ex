@@ -1,7 +1,7 @@
 defmodule Exbrainz do
   alias Exbrainz.Artist
 
-  def get_artist(mbid) do
+  def get_artist!(mbid) do
     path = "/artist/#{mbid}?inc=aliases&fmt=json"
     response = get!(path)
     Poison.decode!(response.body, as: %Artist{})
