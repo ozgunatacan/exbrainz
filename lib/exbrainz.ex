@@ -8,7 +8,7 @@ defmodule Exbrainz do
   end
 
   def get_recordings!(mbid, limit \\ 25) do
-    path = "/recording?artist=#{mbid}&fmt=json&limit=#{limit}"
+    path = "/recording?artist=#{mbid}&fmt=json&limit=#{limit}&inc=artist-rels"
     response = get!(path)
     Poison.decode!(response.body, as: %Recordings{})
   end

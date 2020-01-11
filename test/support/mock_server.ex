@@ -2,7 +2,7 @@ defmodule MockServer do
   use Plug.Router
   import Plug.Conn
 
-  plug(Plug.Logger)
+  plug(Plug.Logger, log: :debug)
 
   plug(:match)
   plug(:dispatch)
@@ -26,7 +26,8 @@ defmodule MockServer do
     mbid = "e77a055f-bb96-4317-bfd0-45ec69c9e852"
     conn = fetch_query_params(conn)
 
-    with %{"artist" => ^mbid, "fmt" => "json", "limit" => "10"} <- conn.query_params do
+    with %{"artist" => ^mbid, "inc" => "artist-rels", "fmt" => "json", "limit" => "10"} <-
+           conn.query_params do
       conn
       |> put_resp_content_type("application/json")
       |> send_resp(200, Responses.recordings())

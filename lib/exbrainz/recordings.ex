@@ -1,6 +1,12 @@
 defmodule Exbrainz.Recordings do
   defstruct "recording-count": 0, "recording-offset": 0, recordings: []
   use ExConstructor
+
+  alias Exbrainz.Recordings
+
+  def get_recording_by_title(%Recordings{recordings: recordings}, title) do
+    Enum.find(recordings, &(&1.title == title))
+  end
 end
 
 defimpl Poison.Decoder, for: Exbrainz.Recordings do
