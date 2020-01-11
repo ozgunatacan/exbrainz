@@ -31,3 +31,21 @@ config :exbrainz,
   user_agent: "Xbrainz/0.1.0 ( https://github.com/ozgunatacan/exbrainz )"
 
 ```
+## Usage
+
+```elixir
+micheal_jackson = "f27ec8db-af05-4f36-916e-3d57f91ecf5e"
+
+artist = Exbrainz.get_artist!(micheal_jackson)
+artits.aliases
+
+Exbrainz.get_recordings!(micheal_jackson, 1)
+
+works  = Exbrainz.get_works!(micheal_jackson, 1)
+
+work = Works.get_work_by_title(works, "Billy Jean")
+
+Work.get_composer(work) 
+Work.get_lyricist(work) 
+ 
+```
