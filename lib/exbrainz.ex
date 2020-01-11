@@ -1,10 +1,16 @@
 defmodule Exbrainz do
-  alias Exbrainz.Artist
+  alias Exbrainz.{Artist, Recordings}
 
   def get_artist!(mbid) do
     path = "/artist/#{mbid}?inc=aliases&fmt=json"
     response = get!(path)
     Poison.decode!(response.body, as: %Artist{})
+  end
+
+  def get_recordings!(mbid, limit \\ 25) do
+    path = "/recording?artist=#{mbid}&fmt=json&limit=#{limit}"
+    response = get!(path)
+    Poison.decode!(response.body, as: %Recordings{})
   end
 
   defp get!(path) do
