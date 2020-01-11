@@ -18,7 +18,7 @@ end
 
 ## Config
 
-Music brains needs User-Agent header for [rate-limiting.](https://musicbrainz.org/doc/XML_Web_Service/Rate_Limiting)
+MusicBrainz needs User-Agent header for [rate-limiting.](https://musicbrainz.org/doc/XML_Web_Service/Rate_Limiting)
 
 ```elixir
 

@@ -1,7 +1,7 @@
 defmodule ExbrainzTest do
   use ExUnit.Case
 
-  alias Exbrainz.{Recording, Recordings, Alias}
+  alias Exbrainz.{Recording, Recordings, Alias, Works, Work}
 
   @mbid "e77a055f-bb96-4317-bfd0-45ec69c9e852"
   test "get artist with musicbrainz id" do
@@ -28,5 +28,21 @@ defmodule ExbrainzTest do
     maga = Recordings.get_recording_by_title(recordings, "A Magaldi")
 
     assert Recording.get_vocals(maga) == ["Carlos Dante", "Julio Martel"]
+  end
+
+  test "get works of an artist with musicbrainz id" do
+    works = Exbrainz.get_works!(@mbid, 2)
+    assert works."work-count" == 113
+    assert works."work-offset" == 0
+    [first | _rest] = works.works
+
+    assert "Song" == first.type
+    assert "A su memoria" == first.title
+    assert "04164f5a-9d24-41c3-99fd-1609fa904d1d" == first.id
+
+    work = Works.get_work_by_title(works, "A su memoria")
+
+    assert Work.get_composer(work) == ["Antonio Sureda"]
+    assert Work.get_lyricist(work) == ["Homero Manzi"]
   end
 end
