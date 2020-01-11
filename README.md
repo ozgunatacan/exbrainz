@@ -1,6 +1,6 @@
 # Exbrainz
 
-[![Actions Status](https://github.com/ozgunatacan/exbrainz/workflows/Build/badge.svg)](https://github.com/ozgunatacan/exbrainz/actions)
+[![Actions Status](https://github.com/ozgunatacan/exbrainz/workflows/build/badge.svg)](https://github.com/ozgunatacan/exbrainz/actions)
 
 
 An Elixir Client library for [MusicBrainz web service.](https://musicbrainz.org/doc/Development/JSON_Web_Service)
