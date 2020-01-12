@@ -9,7 +9,8 @@ jobs:
 
     container:
       image: elixir:1.9.1-slim
-
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v1
     - name: Install Dependencies
