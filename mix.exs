@@ -8,7 +8,14 @@ defmodule Exbrainz.MixProject do
       elixir: "~> 1.9",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -26,7 +33,8 @@ defmodule Exbrainz.MixProject do
       {:httpoison, "~> 1.6"},
       {:poison, "~> 3.1"},
       {:exconstructor, "~> 1.1.0"},
-      {:plug_cowboy, "~> 2.0", only: [:dev, :test]}
+      {:plug_cowboy, "~> 2.0", only: [:dev, :test]},
+      {:excoveralls, "~> 0.10", only: :test}
     ]
   end
 
