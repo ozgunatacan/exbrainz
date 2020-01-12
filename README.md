@@ -4,6 +4,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/ozgunatacan/exbrainz/badge.svg?branch=master)](https://coveralls.io/github/ozgunatacan/exbrainz?branch=master)
 
+[![License](https://img.shields.io/github/license/ozgunatacan/exbrainz)](https://github.com/ozgunatacan/exbrainz/LICENSE)
+
 
 An Elixir Client library for [MusicBrainz web service.](https://musicbrainz.org/doc/Development/JSON_Web_Service)
 
