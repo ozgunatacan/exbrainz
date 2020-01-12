@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/ozgunatacan/exbrainz)](https://github.com/ozgunatacan/exbrainz/LICENSE)
 
 
-An Elixir Client library for [MusicBrainz web service.](https://musicbrainz.org/doc/Development/JSON_Web_Service)
+Elixir Client library for [MusicBrainz web service.](https://musicbrainz.org/doc/Development/JSON_Web_Service)
 
 To understand MusicBrainz terminology better read [here.](https://musicbrainz.org/doc/Terminology)
 
