@@ -16,7 +16,11 @@ defmodule Exbrainz.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test,
         "coveralls.github": :test
-      ]
+      ],
+      description: description(),
+      package: package(),
+      name: "Exbrainz",
+      source_url: "https://github.com/ozgunatacan/exbrainz"
     ]
   end
 
@@ -36,6 +40,20 @@ defmodule Exbrainz.MixProject do
       {:exconstructor, "~> 1.1.0"},
       {:plug_cowboy, "~> 2.0", only: [:dev, :test]},
       {:excoveralls, "~> 0.10", only: :test}
+    ]
+  end
+
+  defp description() do
+    "Elixir client library for MusicBrainz web service."
+  end
+
+  defp package() do
+    [
+      # These are the default files included in the package
+      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* src),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/ozgunatacan/exbrainz"}
     ]
   end
 
