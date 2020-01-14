@@ -39,7 +39,8 @@ defmodule Exbrainz.MixProject do
       {:poison, "~> 3.1"},
       {:exconstructor, "~> 1.1.0"},
       {:plug_cowboy, "~> 2.0", only: [:dev, :test]},
-      {:excoveralls, "~> 0.10", only: :test}
+      {:excoveralls, "~> 0.10", only: :test},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
