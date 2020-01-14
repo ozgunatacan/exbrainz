@@ -50,8 +50,7 @@ defmodule Exbrainz.MixProject do
   defp package() do
     [
       # These are the default files included in the package
-      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src),
+      files: ~w(lib config .formatter.exs mix.exs README*  LICENSE*),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/ozgunatacan/exbrainz"}
     ]
